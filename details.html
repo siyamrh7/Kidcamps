@@ -700,15 +700,18 @@
         const clone1 = node1.cloneNode(true);
         clone1.setAttribute("id",FormID);
         clone1.setAttribute("aria-labelledby",MenuID);
-        clone1.setAttribute("class",`tab-pane fade num+${num}`)
+        clone1.setAttribute("class",`tab-pane fade tum${num}`)
         document.getElementById("myTabContent").appendChild(clone1);
 
        
       }
      function remove(num){
-      const topps="num"+num
-      const element = document.getElementsByClassName(topps);
-      element[0].remove()
+      const tabClass="num"+num
+      const tab = document.getElementsByClassName(tabClass);
+      tab[0].remove()
+      const formClass="tum"+num
+      const form =document.getElementsByClassName(formClass)
+      form[0].remove()
      }
 
       </script>
