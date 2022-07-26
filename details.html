@@ -678,6 +678,10 @@
         MenuID= MenuID +1
         FormID= FormID +1
         num=num+1
+  
+      
+
+
         const node = document.getElementById("profile-tab");
        
         const clone = node.cloneNode(true);
@@ -694,26 +698,30 @@
         document.getElementById("myTab").appendChild(item);
 
 
-
-
+    
         const node1 = document.getElementById("profile");
         const clone1 = node1.cloneNode(true);
         clone1.setAttribute("id",FormID);
         clone1.setAttribute("aria-labelledby",MenuID);
-        clone1.setAttribute("class",`tab-pane fade tum${num}`)
+        clone1.setAttribute("class",`tab-pane fade tum${num} show`)
         document.getElementById("myTabContent").appendChild(clone1);
 
+      
        
       }
      function remove(num){
+       const node = document.getElementById("profile-tab");
+       node.classList.add("active")
+       
       const tabClass="num"+num
       const tab = document.getElementsByClassName(tabClass);
       tab[0].remove()
       const formClass="tum"+num
       const form =document.getElementsByClassName(formClass)
       form[0].remove()
-     }
-
+      const node1 = document.getElementById("profile")
+      node1.className="active show"
+    }
       </script>
 </body>
 </html>
